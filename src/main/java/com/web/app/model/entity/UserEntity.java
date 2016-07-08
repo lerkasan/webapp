@@ -5,13 +5,19 @@ import lombok.*;
 
 import javax.persistence.*;
 
-@NoArgsConstructor
-@AllArgsConstructor
+//@NoArgsConstructor
+//@AllArgsConstructor
 @EqualsAndHashCode(callSuper = true)
 @Entity
 @ToString(callSuper = true)
 @Table(name = "users")
 public class UserEntity extends BaseEntity {
+
+    @Column(name = "name", nullable = false, unique = true)
+    private String name;
+
+    @Column(name = "password", nullable = false)
+    private String password;
 
     public UserEntity() {
     }
@@ -20,12 +26,6 @@ public class UserEntity extends BaseEntity {
         this.name = name;
         this.password = password;
     }
-
-    @Column(name = "name", nullable = false, unique = true)
-    private String name;
-
-    @Column(name = "password", nullable = false)
-    private String password;
 
     public String getName() {
         return name;

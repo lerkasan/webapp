@@ -8,7 +8,7 @@ import lombok.ToString;
 import javax.persistence.*;
 
 
-@NoArgsConstructor
+//@NoArgsConstructor
 @MappedSuperclass
 @ToString
 public class BaseEntity {
