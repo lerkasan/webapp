@@ -16,6 +16,11 @@ public class UserEntity extends BaseEntity {
     public UserEntity() {
     }
 
+    public UserEntity(String name, String password) {
+        this.name = name;
+        this.password = password;
+    }
+
     @Column(name = "name", nullable = false, unique = true)
     private String name;
 
